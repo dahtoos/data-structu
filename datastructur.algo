@@ -1,0 +1,46 @@
+ALGORITHM datastructures
+VAR
+    int : SET1 : ARRAY_OF type[3];
+    int : SET1 : ARRAY_OF type[4];
+    match
+    distinct
+BEGIN
+    SET1 = {3,1,7,9}
+    SET2 = {2,4,1,9,3}
+    FOR i from 0 to set1.length-1 STEP 1
+    FOR j from 0 to set2.length-1 STEP 1
+    IF (SET1[i]?<> SET2[j]) THEN
+    match=0;
+    ELSE
+    match=1;
+    END_FOR
+    END_IF
+END_FOR
+    IF (match=0) THEN
+    distinct= distinct + set1[i]
+    END_IF
+END_FOR
+    FOR i from 0 to set1.length-1 STEP 1
+    FOR j from 0 to set2.length-1 STEP 1
+    IF (SET2[i]?<> SET1[j]) THEN
+    match=0;
+    ELSE
+    match=1;
+    END_FOR
+    END_IF
+END_FOR
+    IF (match=0) THEN
+    distinct= distinct + set1[i]
+    END_IF
+END_FOR
+    FOR j from 0 to set2.length-1 STEP 1
+    END
+
+
+
+
+
+
+
+END_FOR
+END
